@@ -1,5 +1,5 @@
 var pokemonList;
-pokemonList = [
+let pokemonList = [
     {
         name: 'Bublbasaur',
         height: 0.7,
@@ -11,7 +11,7 @@ pokemonList = [
         height: 0.6,
         weight: 8.5,
         type: ['Fire']
-    }
+    },
     {
         name: 'Squirtle',
         height: 0.5,
@@ -19,3 +19,13 @@ pokemonList = [
         type: ['Water']
     }
 ]
+for (let i=0; i < pokemonList.length; i++){
+    if (pokemonList[i].height <1.0 && pokemonList[i].height >= 0.6){
+      document.write(pokemonList[i].name + " " + pokemonList[i].height);
+    }else if (pokemonList[i].height <=0.5){
+      document.write(pokemonList[i].name + " " + pokemonList[i].height + " Now that is small! ");
+    }
+    else if (pokemonList[i].height >1.0){
+        document.write(pokemonList[i].name + " " + pokemonList[i].height + " That is big! ")
+    }
+  }
