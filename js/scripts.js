@@ -26,29 +26,30 @@ let pokemonRepository = (function () {
         }
     ];
   
-    function add(pokemon) {
-      pokemonList.push(pokemon);
-    }
-  
-    function getAll() {
-      return pokemonList;
-    }
-  
     return {
-      add: add,
-      getAll: getAll
+      add: function(pokemon) {
+        pokemonList.push(pokemon);
+      },
+      getAll: function() {
+        return pokemonList;
+      }
     };
   })();
+  
+  console.log(pokemonRepository.getAll());
+  pokemonRepository.add({ name: 'Pikachu' });
+  console.log(pokemonRepository.getAll());
 
-function printPokemonDetails(){
-    pokemonList.forEach(function(pokemon) {
-        if (pokemon.height <1.0 && pokemon.height >= 0.6){
-            document.write(pokemon.name + " " + pokemon.height + '<br>');
-            }else if (pokemon.height <=0.5){
-            document.write(pokemon.name + " " + pokemon.height + " - Now that is small. " + '<br>');
-            }
-            else if (pokemon.height >1.0){
-                document.write(pokemon.name + " " + pokemon.height + " - That is big. " + '<br>')
-            }
-    })
+  function printPokemonDetails(user){
+        if (pokemonRepository[i].height <1.0 && pokemonRepository[i].height >= 0.6){
+        document.write(pokemonRepository[i].name + " " + pokemonRepository[i].height + '<br>');
+        }else if (pokemonRepository[i].height <=0.5){
+        document.write(pokemonRepository[i].name + " " + pokemonRepository[i].height + " - Now that is small. " + '<br>');
+        }
+        else if (pokemonRepository[i].height >1.0){
+            document.write(pokemonRepository[i].name + " " + pokemonRepository[i].height + " - That is big. " + '<br>')
+        }
 }
+
+pokemonRepository.forEach(printPokemonDetails);
+
