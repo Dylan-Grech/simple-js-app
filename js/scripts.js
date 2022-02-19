@@ -27,12 +27,7 @@ let pokemonRepository = (function () {
   ];
 
   function add(item) {
-    pokemonList.push({
-      name: 'Pikachu',
-      height: 0.4,
-      weight: 6,
-      type: ['Electric']
-    });
+    pokemonList.push(item)
   }
 
   function getAll() {
@@ -45,7 +40,12 @@ let pokemonRepository = (function () {
   };
 })();
 
-pokemonRepository.add('Pikachu')
+pokemonRepository.add({
+  name: 'Pikachu',
+  height: 0.4,
+  weight: 6,
+  type: ['Electric']
+});
 
 pokemonRepository.getAll().forEach(function(pokemon) {
   document.write(pokemon.name + ' height : ' + pokemon.height + '<br>');
